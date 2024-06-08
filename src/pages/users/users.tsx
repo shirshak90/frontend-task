@@ -4,6 +4,7 @@ import { users } from "../../data";
 import { columns } from "./components/columns";
 
 export function UsersPage() {
+  console.log(users.length);
   return (
     <div>
       <TableContextProvider data={users} columns={columns}>

@@ -1,6 +1,7 @@
 import { flexRender } from "@tanstack/react-table";
 import { useContext } from "react";
 import { TableContext } from "../context/table-context/table-context";
+import { DataTablePagination } from "./data-table-pagination";
 
 export function DataTable() {
   const context = useContext(TableContext);
@@ -53,6 +54,7 @@ export function DataTable() {
             )}
           </tbody>
         </table>
+        <DataTablePagination table={context.table} />
       </div>
     </div>
   );
