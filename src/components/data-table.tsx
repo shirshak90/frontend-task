@@ -1,33 +1,20 @@
-import {
-  ColumnDef,
-  useReactTable,
-  getCoreRowModel,
-  flexRender,
-  getPaginationRowModel,
-} from "@tanstack/react-table";
+import { flexRender } from "@tanstack/react-table";
+import { useContext } from "react";
+import { TableContext } from "../context/table-context/table-context";
 
-interface DataTableProps<TData, TValue> {
-  columns: ColumnDef<TData, TValue>[];
-  data: TData[];
-}
+export function DataTable() {
+  const context = useContext(TableContext);
 
-export function DataTable<TData, TValue>({
-  columns,
-  data,
-}: DataTableProps<TData, TValue>) {
-  const table = useReactTable({
-    data,
-    columns,
-    getCoreRowModel: getCoreRowModel(),
-    getPaginationRowModel: getPaginationRowModel(),
-  });
+  if (!context?.table) {
+    return <div>Data table must be inside Table context</div>;
+  }
 
   return (
     <div>
       <div>
         <table>
           <thead>
-            {table.getHeaderGroups().map((headerGroup) => (
+            {context.table.getHeaderGroups().map((headerGroup) => (
               <tr key={headerGroup.id}>
                 {headerGroup.headers.map((header) => {
                   return (
@@ -46,8 +33,8 @@ export function DataTable<TData, TValue>({
           </thead>
 
           <tbody>
-            {table.getRowModel().rows.length ? (
-              table.getRowModel().rows.map((row) => (
+            {context.table.getRowModel().rows.length ? (
+              context.table.getRowModel().rows.map((row) => (
                 <tr key={row.id} data-state={row.getIsSelected() && "selected"}>
                   {row.getVisibleCells().map((cell) => (
                     <td key={cell.id}>
