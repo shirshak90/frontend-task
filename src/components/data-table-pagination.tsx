@@ -1,3 +1,5 @@
+import { MdNavigateNext, MdNavigateBefore } from "react-icons/md";
+
 import { Button } from "./button";
 import { useTableContext } from "../context/table-context/table-context";
 
@@ -16,7 +18,7 @@ export function DataTablePagination() {
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
-          prev
+          <MdNavigateBefore className="icon" />
         </Button>
 
         <Button
@@ -24,7 +26,7 @@ export function DataTablePagination() {
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >
-          next
+          <MdNavigateNext className="icon" />
         </Button>
       </div>
     </div>

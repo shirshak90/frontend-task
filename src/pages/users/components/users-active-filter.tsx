@@ -1,5 +1,7 @@
 import Dropdown from "rc-dropdown";
 import Menu, { Item as MenuItem } from "rc-menu";
+import { FiPlusCircle } from "react-icons/fi";
+
 import { useTableContext } from "../../../context/table-context/table-context";
 import { Button } from "../../../components/button";
 
@@ -35,11 +37,15 @@ export function UsersActiveFilter() {
         }
         animation="slide-up"
       >
-        <Button style={{ width: 100 }}>
+        <Button style={{ width: 120 }}>
           {options
             .filter((item) => selectedValues === item.value)
             .map((item) => item.label)}
-          {!selectedValues && "Status"}
+          {!selectedValues && (
+            <>
+              <FiPlusCircle className="data-table-header-icon" /> Status
+            </>
+          )}
         </Button>
       </Dropdown>
     </>
