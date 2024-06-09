@@ -88,7 +88,6 @@ button {
   box-shadow: none;
 }
 
-
 /* Toolbar */
 .users-toolbar {
   display: flex;
@@ -166,4 +165,12 @@ td {
 
 .data-table-header-title {
   text-wrap: nowrap;
+}
+
+/* Dashboard Header */
+
+.dashboard-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }

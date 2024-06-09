@@ -1,3 +1,4 @@
+import { DashboardHeader } from "../../components/dashboard-header";
 import { DataTable } from "../../components/data-table";
 import { DataTablePagination } from "../../components/data-table-pagination";
 import { TableContextProvider } from "../../context/table-context/table-context";
@@ -7,12 +8,13 @@ import { UsersToolbar } from "./components/users-toolbar";
 
 export function UsersPage() {
   return (
-    <div>
+    <>
+      <DashboardHeader title="Users List" />
       <TableContextProvider data={users} columns={columns}>
         <UsersToolbar />
         <DataTable />
         <DataTablePagination />
       </TableContextProvider>
-    </div>
+    </>
   );
 }

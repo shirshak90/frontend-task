@@ -1,4 +1,5 @@
 import { format } from "date-fns";
+import { Link } from "react-router-dom";
 import { ColumnDef } from "@tanstack/react-table";
 
 import { DataTableHeader } from "../../../components/data-table-header";
@@ -10,7 +11,12 @@ export const columns: ColumnDef<IUser>[] = [
     header: ({ column }) => (
       <DataTableHeader column={column} title={"FULL NAME"} />
     ),
-    cell: (info) => info.getValue(),
+    cell: ({ row }) => (
+      <Link to={`/subscriptions/${row.original.id}`} className="link-button">
+        {row.original.first_name} {row.original.middle_name}{" "}
+        {row.original.last_name}
+      </Link>
+    ),
     size: 200,
   },
   {
