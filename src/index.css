@@ -27,7 +27,7 @@
 }
 
 input {
-  height: 2.25rem;
+  height: 2rem;
   border-radius: calc(var(--radius) - 2px);
   border-width: 1px;
   border-color: var(--border);
