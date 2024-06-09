@@ -18,7 +18,7 @@ export function DashboardHeader({ title, backButton }: DashboardHeaderProps) {
           </Button>
         </Link>
       )}
-      <h2>{title}</h2>
+      <h1>{title}</h1>
     </div>
   );
 }

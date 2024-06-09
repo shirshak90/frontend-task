@@ -174,3 +174,25 @@ td {
   align-items: center;
   gap: 10px;
 }
+
+/* Misc */
+
+.active-dot::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--primary);
+  margin-right: 8px;
+}
+
+.inactive-dot::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--destructive);
+  margin-right: 8px;
+}

@@ -1,3 +1,5 @@
+import { IoMdClose } from "react-icons/io";
+
 import { Button } from "../../../components/button";
 import { useTableContext } from "../../../context/table-context/table-context";
 import { UsersActiveFilter } from "./users-active-filter";
@@ -22,7 +24,7 @@ export function UsersToolbar() {
             table.setGlobalFilter("");
           }}
         >
-          Reset
+          <IoMdClose className="data-table-header-icon" /> Reset
         </Button>
       )}
     </div>

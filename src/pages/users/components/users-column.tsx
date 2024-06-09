@@ -49,7 +49,12 @@ export const columns: ColumnDef<IUser>[] = [
     accessorKey: "active",
     header: "STATUS",
     cell: ({ row }) => {
-      return <span>{row.original.active === "1" ? "Active" : "Inactive"}</span>;
+      const isActive = row.original.active === "1";
+      return (
+        <span className={isActive ? "active-dot" : "inactive-dot"}>
+          {isActive ? "Active" : "Inactive"}
+        </span>
+      );
     },
     enableGlobalFilter: false,
   },
