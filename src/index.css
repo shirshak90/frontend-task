@@ -49,6 +49,8 @@ button {
   text-overflow: ellipsis;
   overflow: hidden;
   white-space: nowrap;
+  display: flex;
+  align-items: center;
 }
 
 .default-button {
@@ -140,4 +142,19 @@ td {
   display: flex;
   align-items: center;
   gap: 5px;
+}
+
+.data-table-header {
+  display: flex;
+  align-items: center;
+}
+
+.data-table-header-icon {
+  font-size: 1.2rem;
+  color: var(--muted-foreground);
+  margin-right: 8px;
+}
+
+.data-table-header-title {
+  text-wrap: nowrap;
 }

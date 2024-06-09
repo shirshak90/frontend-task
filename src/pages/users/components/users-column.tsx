@@ -1,22 +1,21 @@
-import { ColumnDef } from "@tanstack/react-table";
 import { format } from "date-fns";
+import { ColumnDef } from "@tanstack/react-table";
+
+import { DataTableHeader } from "../../../components/data-table-header";
 
 export const columns: ColumnDef<IUser>[] = [
   {
-    accessorKey: "full_name",
-    header: "FULL NAME",
-    cell: ({ row }) => {
-      return (
-        <span>
-          {row.original.first_name} {row.original.middle_name}{" "}
-          {row.original.last_name}
-        </span>
-      );
-    },
+    accessorFn: (row) => `${row.first_name} ${row.last_name}`,
+    id: "full_name",
+    header: ({ column }) => (
+      <DataTableHeader column={column} title={"FULL NAME"} />
+    ),
+    cell: (info) => info.getValue(),
+    size: 200,
   },
   {
     accessorKey: "email",
-    header: "EMAIL",
+    header: ({ column }) => <DataTableHeader column={column} title={"EMAIL"} />,
     cell: ({ row }) => {
       return <span>{row.original.email}</span>;
     },
@@ -34,6 +33,7 @@ export const columns: ColumnDef<IUser>[] = [
     cell: ({ row }) => {
       return <span>{row.original.country}</span>;
     },
+    enableGlobalFilter: false,
   },
   {
     accessorKey: "active",
@@ -41,10 +41,13 @@ export const columns: ColumnDef<IUser>[] = [
     cell: ({ row }) => {
       return <span>{row.original.active === "1" ? "Active" : "Inactive"}</span>;
     },
+    enableGlobalFilter: false,
   },
   {
     accessorKey: "join_date",
-    header: "JOINED",
+    header: ({ column }) => (
+      <DataTableHeader column={column} title={"JOINED"} />
+    ),
     cell: ({ row }) => {
       return (
         <span>
