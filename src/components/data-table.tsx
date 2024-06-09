@@ -5,7 +5,7 @@ export function DataTable() {
   const { table } = useTableContext();
 
   return (
-    <div>
+    <div className="table-container">
       <table>
         <thead>
           {table.getHeaderGroups().map((headerGroup) => (
