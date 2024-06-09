@@ -22,14 +22,18 @@ export const columns: ColumnDef<IUser>[] = [
   },
   {
     accessorKey: "address",
-    header: "ADDRESS",
+    header: ({ column }) => (
+      <DataTableHeader column={column} title={"ADDRESS"} />
+    ),
     cell: ({ row }) => {
       return <span>{row.original.address}</span>;
     },
   },
   {
     accessorKey: "country",
-    header: "COUNTRY",
+    header: ({ column }) => (
+      <DataTableHeader column={column} title={"COUNTRY"} />
+    ),
     cell: ({ row }) => {
       return <span>{row.original.country}</span>;
     },
