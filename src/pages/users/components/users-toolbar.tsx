@@ -12,16 +12,19 @@ export function UsersToolbar() {
       <UsersInputFilter />
       <UsersActiveFilter />
       <UsersCountryFilter />
-      <Button
-        variant={"secondary"}
-        onClick={() => {
-          table.resetColumnFilters();
-          table.resetGlobalFilter();
-          table.setGlobalFilter("");
-        }}
-      >
-        Reset
-      </Button>
+      {(table.getState().globalFilter.length > 0 ||
+        table.getState().columnFilters.length > 0) && (
+        <Button
+          variant={"secondary"}
+          onClick={() => {
+            table.resetColumnFilters();
+            table.resetGlobalFilter();
+            table.setGlobalFilter("");
+          }}
+        >
+          Reset
+        </Button>
+      )}
     </div>
   );
 }

@@ -15,16 +15,17 @@ export function UsersCountryFilter() {
     value: key,
   }));
 
-  const onSelect = ({ key }: { key: string }) => {
-    table.getColumn("country")?.setFilterValue(key);
-  };
-
   return (
     <>
       <Dropdown
         trigger={["click"]}
         overlay={
-          <Menu className="overlay-dropdown" onSelect={onSelect}>
+          <Menu
+            className="overlay-dropdown"
+            onClick={(info) =>
+              table.getColumn("country")?.setFilterValue(info.key)
+            }
+          >
             {options.map((option) => (
               <MenuItem key={option.value}>
                 <Button variant={"link"}>{option.label}</Button>

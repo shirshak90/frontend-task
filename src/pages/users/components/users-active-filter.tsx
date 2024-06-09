@@ -15,16 +15,17 @@ export function UsersActiveFilter() {
     value: key,
   }));
 
-  const onSelect = ({ key }: { key: string }) => {
-    table.getColumn("active")?.setFilterValue(key);
-  };
-
   return (
     <>
       <Dropdown
         trigger={["click"]}
         overlay={
-          <Menu className="overlay-dropdown" onSelect={onSelect}>
+          <Menu
+            className="overlay-dropdown"
+            onClick={(info) =>
+              table.getColumn("active")?.setFilterValue(info.key)
+            }
+          >
             {options.map((option) => (
               <MenuItem key={option.value}>
                 <Button variant={"link"}>{option.label}</Button>
@@ -38,7 +39,7 @@ export function UsersActiveFilter() {
           {options
             .filter((item) => selectedValues === item.value)
             .map((item) => item.label)}
-          {!selectedValues && "Active"}
+          {!selectedValues && "Status"}
         </Button>
       </Dropdown>
     </>
