@@ -22,4 +22,11 @@ export const columns: ColumnDef<IUser>[] = [
       return <p>{row.original.country}</p>;
     },
   },
+  {
+    accessorKey: "active",
+    header: "Status",
+    cell: ({ row }) => {
+      return <p>{row.original.active === "1" ? "Active" : "Inactive"}</p>;
+    },
+  },
 ];

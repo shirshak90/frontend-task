@@ -6,7 +6,7 @@ export function UsersInputFilter() {
   return (
     <div>
       <input
-        placeholder="Filter..."
+        placeholder="Filter All..."
         value={globalFilter}
         onChange={(e) => setGlobalFilter && setGlobalFilter(e.target.value)}
       />
