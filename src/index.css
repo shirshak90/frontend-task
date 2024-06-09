@@ -35,6 +35,7 @@ input {
   box-shadow: var(--box-shadow);
 }
 
+/* Buttons */
 button {
   padding-inline: 1rem;
   padding-block: 0.5rem;
@@ -81,13 +82,47 @@ button {
   box-shadow: none;
 }
 
+
+/* Toolbar */
 .users-toolbar {
   display: flex;
   gap: 10px;
   flex-wrap: wrap;
 }
 
+/* Overlay */
 .overlay-dropdown {
   max-height: 250px;
   overflow: scroll;
+}
+
+/* Table */
+table {
+  width: 100%;
+  overflow: scroll;
+  font-size: 0.875rem;
+  border-collapse: collapse;
+  line-height: 1.25rem;
+  box-shadow: var(--box-shadow);
+  border-radius: calc(var(--radius) - 2px);
+  margin-top: 10px;
+  overflow: hidden;
+}
+
+th {
+  height: 1.85rem;
+  text-align: left;
+  padding-inline: 0.5rem;
+  font-weight: 500;
+  background-color: var(--muted);
+}
+
+tr:hover {
+  background-color: var(--muted);
+}
+
+th,
+td {
+  border-bottom: 1px solid var(--muted);
+  padding: 8px 10px;
 }
