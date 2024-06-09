@@ -1,5 +1,7 @@
 import { Table } from "@tanstack/react-table";
 
+import { Button } from "./button";
+
 interface DataTablePaginationProps {
   table: Table<any>;
 }
@@ -12,19 +14,19 @@ export function DataTablePagination({ table }: DataTablePaginationProps) {
         {table.getPageCount()}
       </div>
       <div>
-        <button
+        <Button
           onClick={() => table.previousPage()}
           disabled={!table.getCanPreviousPage()}
         >
           prev
-        </button>
+        </Button>
 
-        <button
+        <Button
           onClick={() => table.nextPage()}
           disabled={!table.getCanNextPage()}
         >
           next
-        </button>
+        </Button>
       </div>
     </div>
   );

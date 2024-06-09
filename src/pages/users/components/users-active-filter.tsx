@@ -1,6 +1,7 @@
 import Dropdown from "rc-dropdown";
 import Menu, { Item as MenuItem } from "rc-menu";
 import { useTableContext } from "../../../context/table-context/table-context";
+import { Button } from "../../../components/button";
 
 export function UsersActiveFilter() {
   const { table } = useTableContext<IUser>();
@@ -23,20 +24,22 @@ export function UsersActiveFilter() {
       <Dropdown
         trigger={["click"]}
         overlay={
-          <Menu onSelect={onSelect}>
+          <Menu className="overlay-dropdown" onSelect={onSelect}>
             {options.map((option) => (
-              <MenuItem key={option.value}>{option.label}</MenuItem>
+              <MenuItem key={option.value}>
+                <Button variant={"link"}>{option.label}</Button>
+              </MenuItem>
             ))}
           </Menu>
         }
         animation="slide-up"
       >
-        <button style={{ width: 100 }}>
+        <Button style={{ width: 100 }}>
           {options
             .filter((item) => selectedValues === item.value)
             .map((item) => item.label)}
-          {!selectedValues && "Filter"}
-        </button>
+          {!selectedValues && "Active"}
+        </Button>
       </Dropdown>
     </>
   );

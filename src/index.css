@@ -7,4 +7,83 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  --primary: #00a67e;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #0f172a;
+  --muted: #f1f5f9;
+  --muted-foreground: #64748b;
+  --destructive: #ef4444;
+  --input: #e2e8f0;
+  --border: #e2e8f0;
+
+  --radius: 0.5rem;
+
+  --box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+}
+
+input {
+  height: 2.25rem;
+  border-radius: calc(var(--radius) - 2px);
+  border-width: 1px;
+  border-color: var(--border);
+  padding-inline: 0.75rem;
+  padding-block: 0.1rem;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  border: 0;
+  box-shadow: var(--box-shadow);
+}
+
+button {
+  padding-inline: 1rem;
+  padding-block: 0.5rem;
+  font-size: 0.875rem;
+  border-radius: calc(var(--radius) - 2px);
+  box-shadow: var(--box-shadow);
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.default-button {
+  background-color: var(--primary);
+  color: white;
+  box-shadow: none;
+}
+
+.destructive-button {
+  background-color: var(--destructive);
+  color: white;
+  box-shadow: none;
+}
+
+.link-button {
+  background-color: transparent;
+  color: black;
+  box-shadow: none;
+  width: 100%;
+  border-radius: 0;
+  text-align: start;
+  cursor: pointer;
+}
+
+.outline-button {
+  background-color: transparent;
+}
+
+.secondary-button {
+  background-color: var(--secondary);
+  box-shadow: none;
+}
+
+.users-toolbar {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.overlay-dropdown {
+  max-height: 250px;
+  overflow: scroll;
 }

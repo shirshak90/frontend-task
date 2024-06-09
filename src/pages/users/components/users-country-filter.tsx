@@ -1,6 +1,7 @@
 import Dropdown from "rc-dropdown";
 import Menu, { Item as MenuItem } from "rc-menu";
 import { useTableContext } from "../../../context/table-context/table-context";
+import { Button } from "../../../components/button";
 
 export function UsersCountryFilter() {
   const { table } = useTableContext<IUser>();
@@ -23,9 +24,11 @@ export function UsersCountryFilter() {
       <Dropdown
         trigger={["click"]}
         overlay={
-          <Menu onSelect={onSelect}>
+          <Menu className="overlay-dropdown" onSelect={onSelect}>
             {options.map((option) => (
-              <MenuItem key={option.value}>{option.label}</MenuItem>
+              <MenuItem key={option.value}>
+                <Button variant={"link"}>{option.label}</Button>
+              </MenuItem>
             ))}
           </Menu>
         }
@@ -36,7 +39,7 @@ export function UsersCountryFilter() {
             .filter((item) => selectedValues === item.value)
             .map((item) => item.label)}
 
-          {!selectedValues && "Filter"}
+          {!selectedValues && "Country"}
         </button>
       </Dropdown>
     </>
