@@ -5,7 +5,8 @@ import {
   CardContent,
   CardDescription,
 } from "../../../components/card";
-import { FaRegUser } from "react-icons/fa";
+import { FaList } from "react-icons/fa";
+
 import { getPlanCount } from "../../../utils/getPlanCount";
 
 export function TotalSubscriptions() {
@@ -13,16 +14,16 @@ export function TotalSubscriptions() {
   return (
     <Card>
       <CardHeader>
-        <CardTitle icon={<FaRegUser />}>
+        <CardTitle icon={<FaList />}>
           <p>Total Subscriptions</p>
         </CardTitle>
-        <CardContent>
-          <p style={{ fontSize: "2rem", fontWeight: 600 }}>
-            +{subscriptions.totalPlans}
-          </p>
-          <CardDescription>Till Date</CardDescription>
-        </CardContent>
       </CardHeader>
+      <CardContent>
+        <p style={{ fontSize: "2rem", fontWeight: 600 }}>
+          +{subscriptions.totalPlans}
+        </p>
+        <CardDescription>Till Date</CardDescription>
+      </CardContent>
     </Card>
   );
 }

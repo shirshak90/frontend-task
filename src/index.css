@@ -279,8 +279,9 @@ td {
 
 .dashboard-charts {
   display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 /* Card */
@@ -293,12 +294,14 @@ td {
 
 .card-header {
   padding: 25px;
+  padding-bottom: 0;
   display: flex;
   flex-direction: column;
 }
 
 .card-title {
   letter-spacing: -0.025em;
+  font-weight: 500;
   display: flex;
   align-items: center;
   justify-content: space-between;

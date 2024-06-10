@@ -1,4 +1,5 @@
 import { DashboardHeader } from "../../components/dashboard-header";
+import { SubscriptionChart } from "./components/subscriptions-chart";
 import { TotalSubscriptions } from "./components/total-subscriptions";
 import { TotalUsers } from "./components/total-users";
 
@@ -11,7 +12,9 @@ export function DashboardPage() {
         <TotalSubscriptions />
       </div>
 
-      <div className="dashboard-charts"></div>
+      <div className="dashboard-charts">
+        <SubscriptionChart />
+      </div>
     </div>
   );
 }

@@ -25,7 +25,7 @@ const CardTitle = ({ children, icon, className }: CardPropsWithIcon) => (
 );
 
 const CardContent = ({ children, className }: CardProps) => (
-  <div className={clsx(className)}>{children}</div>
+  <div className={clsx("card-content", className)}>{children}</div>
 );
 
 const CardDescription = ({ children, className }: CardProps) => (
