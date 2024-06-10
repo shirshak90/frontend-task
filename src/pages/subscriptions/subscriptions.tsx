@@ -1,7 +1,7 @@
 import { useParams } from "react-router-dom";
 
 import { DashboardHeader } from "../../components/dashboard-header";
-import { getSubscriptions } from "../../utils/getSubscriptions";
+import { getSubscriptions } from "../../utils/getUserSubscriptions";
 import { TableContextProvider } from "../../context/table-context/table-context";
 import { DataTable } from "../../components/data-table";
 import { columns } from "./components/subscription-column";
