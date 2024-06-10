@@ -6,7 +6,8 @@ import { DataTableHeader } from "../../../components/data-table-header";
 
 export const columns: ColumnDef<IUser>[] = [
   {
-    accessorFn: (row) => `${row.first_name} ${row.last_name}`,
+    accessorFn: (row) =>
+      `${row.first_name} ${row.middle_name} ${row.last_name}`,
     id: "full_name",
     header: ({ column }) => (
       <DataTableHeader column={column} title={"FULL NAME"} />
