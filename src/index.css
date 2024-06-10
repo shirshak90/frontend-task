@@ -1,3 +1,14 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+}
+
+
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -196,6 +207,20 @@ td {
 
 /* Misc */
 
+.link {
+  text-decoration: none;
+}
+
+.link:visited {
+  color: black;
+}
+
+.active-link {
+  color: var(--primary);
+  text-decoration: none;
+
+}
+
 .active-dot::before {
   content: '';
   display: inline-block;
@@ -214,4 +239,34 @@ td {
   border-radius: 50%;
   background-color: var(--destructive);
   margin-right: 8px;
+}
+
+/* Dashboard */
+
+.dashboard-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+
+.dashboard-sidebar {
+  background-color: var(--muted);
+  padding: 2rem;
+  display: fixed;
+}
+
+.dashboard-content {
+  padding: 2rem;
+  overflow-x: scroll;
+}
+
+.sidebar-route {
+  display: flex;
+  align-items: center;
+  font-size: 0.875rem;
+}
+
+.sidebar-routes {
+  display: grid;
+  gap: 1rem;
 }

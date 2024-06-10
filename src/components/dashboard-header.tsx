@@ -1,5 +1,5 @@
 import { IoMdArrowBack } from "react-icons/io";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 import { Button } from "./button";
 
@@ -9,14 +9,14 @@ interface DashboardHeaderProps {
 }
 
 export function DashboardHeader({ title, backButton }: DashboardHeaderProps) {
+  const router = useNavigate();
+
   return (
     <div className="dashboard-header">
       {backButton && (
-        <Link to={"/"}>
-          <Button variant={"outline"}>
-            <IoMdArrowBack className="icon" />
-          </Button>
-        </Link>
+        <Button variant={"outline"} onClick={() => router(-1)}>
+          <IoMdArrowBack className="icon" />
+        </Button>
       )}
       <h1>{title}</h1>
     </div>
