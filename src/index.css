@@ -316,3 +316,11 @@ td {
   color: var(--muted-foreground);
   font-size: 0.875rem;
 }
+
+/* Charts */
+
+.chart-container {
+  width: 100%;
+  min-height: 400px;
+  position: relative;
+}

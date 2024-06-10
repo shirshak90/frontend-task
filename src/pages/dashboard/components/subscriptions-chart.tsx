@@ -40,7 +40,12 @@ export function SubscriptionChart() {
         </CardTitle>
       </CardHeader>
       <CardContent>
-        <Pie data={pieData} />
+        <div className="chart-container">
+          <Pie
+            data={pieData}
+            options={{ responsive: true, maintainAspectRatio: false }}
+          />
+        </div>
       </CardContent>
     </Card>
   );
