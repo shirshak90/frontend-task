@@ -175,6 +175,25 @@ td {
   gap: 10px;
 }
 
+/* Badge */
+
+.primary-badge {
+  border-radius: 0.75rem;
+  padding-inline: 0.675rem;
+  padding-block: 0.1rem;
+  background-color: var(--primary);
+  color: white;
+}
+
+.secondary-badge {
+  border-radius: 0.75rem;
+  padding-inline: 0.675rem;
+  padding-block: 0.1rem;
+  background-color: var(--muted-foreground);
+  color: white;
+}
+
+
 /* Misc */
 
 .active-dot::before {
