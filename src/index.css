@@ -324,3 +324,34 @@ td {
   min-height: 400px;
   position: relative;
 }
+
+/* Media Queries */
+
+@media only screen and (max-width: 900px) {
+  .dashboard-layout {
+    grid-template-columns: 100px 1fr;
+
+  }
+
+  .sidebar-route-title {
+    display: none;
+  }
+
+  .sidebar-routes {
+    align-items: center;
+  }
+
+  .dashboard-info-cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dashboard-charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .dashboard-info-cards {
+    grid-template-columns: 1fr;
+  }
+}

@@ -28,7 +28,7 @@ export function DashboardLayout() {
             >
               <div className="sidebar-route">
                 {route.icon}
-                {route.title}
+                <span className="sidebar-route-title">{route.title}</span>
               </div>
             </NavLink>
           ))}
